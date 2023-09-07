@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <p>{{ counter$ | async }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="increment"
+        (click)="increment()"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="decrement"
+        (click)="decrement()"
+        class="p-button-secondary"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="reset"
+        (click)="reset()"
+        class="p-button-success"
+      ></button>
+      <br />
+      <br />
+      <form #form ngForm (ngSubmit)="updateCounterValue()">
+        <input [(ngModel)]="val" type="number" name="val" />
+
+        <p-button type="submit" label="updateCounter"></p-button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <p-button label="increment" (click)="increment()"></p-button> -->
